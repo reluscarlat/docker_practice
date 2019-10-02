@@ -16,3 +16,9 @@ After creating the Dockerfile at the root of the  project:
 -> docker run -it -p 3000:3000 supercontainer	
                        |    |---> the port of host where the containere will run.
 		       |--------> the port of container where the app will run.
+
+-> docker-compose build                        
+
+-> docker-compose run smart-brain-api  		// "smart-brain-api" = name of the service that I want to run.
+-> docker-compose up smart-brain-api
+-> docker-compose up --build 			// build and run all containers + live reload for volumes

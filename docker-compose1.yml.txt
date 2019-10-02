@@ -1,0 +1,15 @@
+# indentation matters in yml file
+
+version: '3.6'
+services: 
+  smart-brain-api:                # create a service named "smart-brain-api"
+      container_name: backend       
+      # image: node: node:10.13.0
+      build: ./                   # create the service using the docker file from path ./
+      command: npm start          # run npm start in the container 
+      working_dir: /usr/src/smart-brain-api
+      ports: 
+        - "3000:3000"             # set the ports for app and container
+      volumes: 
+        - ./:/usr/src/smart-brain-api  # synchronize ./ with continer's path /usr/src/smart-brain-api + live reload
+    
