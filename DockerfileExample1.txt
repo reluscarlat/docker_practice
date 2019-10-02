@@ -1,0 +1,9 @@
+FROM node:10.13.0           			// import node with version 10.13.0
+
+WORKDIR ./usr/src/smart-brain-api     		// set the working directory 
+
+COPY ./ ./                			// copy the content from root of the project to the working directory of the container
+
+RUN npm install                                 // run command "npm install"
+
+CMD ["/bin/bash"]

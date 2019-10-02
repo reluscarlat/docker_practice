@@ -1,0 +1,16 @@
+After creating the Dockerfile at the root of the  project:
+
+-> docker build -t supercontainer .   		// build the Docker Container based on the project's Dockerfile
+						// "supercontainer" = name of container 
+						// "." = path to Dokerfile file.
+
+-> docker run -it supercontainer		// run the continer and enter in it.
+
+-> docker run -it -d supercontainer             // run the container and doesn't enter in it.
+
+-> docker ps					// print the current running containers
+
+-> docker stop 7a6a32ababba			// 7a6a32ababba = CONTAINER ID
+						// Stop the container with 7a6a32ababba CONTAINER ID
+
+-> 
