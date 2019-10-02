@@ -13,4 +13,6 @@ After creating the Dockerfile at the root of the  project:
 -> docker stop 7a6a32ababba			// 7a6a32ababba = CONTAINER ID
 						// Stop the container with 7a6a32ababba CONTAINER ID
 
--> 
+-> docker run -it -p 3000:3000 supercontainer	
+                       |    |---> the port of host where the containere will run.
+		       |--------> the port of container where the app will run.
