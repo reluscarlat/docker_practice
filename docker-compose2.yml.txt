@@ -1,0 +1,32 @@
+# indentation matters in yml file
+
+version: '3.6'
+services: 
+  #Back-end API:
+  smart-brain-api:                # create a service named "smart-brain-api"
+    container_name: backend       
+    build: ./                   # create the service using the docker file from path ./
+    command: npm start          # run npm start in the container 
+    working_dir: /usr/src/smart-brain-api
+    environment:
+      POSTGRES_USER: sally
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: smart-brain-docker
+      POSTGRES_HOST: postgres
+    links:
+      - postgres                 # links backend API to postgres service
+    ports: 
+      - "3000:3000"             # set the ports for app and container
+    volumes: 
+      - ./:/usr/src/smart-brain-api
+  
+  #Postres database
+  postgres:
+    environment:
+      POSTGRES_USER: sally
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: smart-brain-docker
+      POSTGRES_HOST: postgres
+    image: postgres
+    ports:
+      - "5435:5435"
